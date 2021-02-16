@@ -113,7 +113,7 @@ export function sanitizeHtml(unsafeHtml, allowList, sanitizeFn) {
       continue
     }
 
-    const attributeList = [].concat(...el.attributes)
+    const attributeList = [].concat(...el.attributes || [])
     const allowedAttributes = [].concat(allowList['*'] || [], allowList[elName] || [])
 
     attributeList.forEach(attr => {
